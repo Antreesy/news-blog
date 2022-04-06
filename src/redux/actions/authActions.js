@@ -1,15 +1,8 @@
-import {GET_ROLE, GET_LOGIN, CLEAN_USER} from "../consts/auth";
+import {AUTH_USER, CLEAN_USER, OPEN_AUTH, CLOSE_AUTH, CHANGE_LOGIN_INPUT, CHANGE_PASS_INPUT} from "../consts/auth";
 
-const getRole = (value) => {
+const authUser = (value) => {
    return {
-        type: GET_ROLE,
-        payload: value,
-    }
-};
-
-const getLogin = (value) => {
-    return {
-        type: GET_LOGIN,
+        type: AUTH_USER,
         payload: value,
     }
 };
@@ -20,5 +13,31 @@ const cleanUser = () => {
     }
 };
 
+const openAuth = () => {
+    return {
+        type: OPEN_AUTH,
+    }
+};
 
-export {getRole, getLogin, cleanUser}
+const closeAuth = () => {
+    return {
+        type: CLOSE_AUTH,
+    }
+};
+
+const changeLoginInput = (value) => {
+    return {
+        type: CHANGE_LOGIN_INPUT,
+        payload: value,
+    }
+};
+
+const changePassInput = (value) => {
+    return {
+        type: CHANGE_PASS_INPUT,
+        payload: value,
+    }
+};
+
+
+export {authUser, cleanUser, openAuth, closeAuth, changeLoginInput, changePassInput}
