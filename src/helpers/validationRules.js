@@ -1,14 +1,14 @@
 const ValidationErrors = {
-  requiredField : 'Это обязательное поле',
-  email : 'E-mail введён некорректно',
-  password : 'Пароль должен содержать заглавную букву',
-  minLength : 'Минимальная длина поля',
-  maxLength : 'Максимальная длина поля',
-}
+  requiredField: "Это обязательное поле",
+  email: "E-mail введён некорректно",
+  password: "Пароль должен содержать заглавную букву",
+  minLength: "Минимальная длина поля",
+  maxLength: "Максимальная длина поля",
+};
 
 const rulesArray = [
   {
-    field: 'required',
+    field: "required",
     rules: {
       required: {
         value: true,
@@ -18,7 +18,7 @@ const rulesArray = [
   },
 
   {
-    field: 'length',
+    field: "length",
     rules: {
       minLength: {
         value: 2,
@@ -32,7 +32,7 @@ const rulesArray = [
   },
 
   {
-    field: 'password',
+    field: "password",
     rules: {
       minLength: {
         value: 4,
@@ -50,7 +50,7 @@ const rulesArray = [
   },
 
   {
-    field: 'eMail',
+    field: "eMail",
     rules: {
       isEmail: {
         value: true,
@@ -58,8 +58,6 @@ const rulesArray = [
       },
     },
   },
-
-
 ];
 
 export { rulesArray };

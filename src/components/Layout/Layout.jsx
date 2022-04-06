@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "../Header/Header";
 
-import c from "./layout.module.scss"
+import c from "./layout.module.scss";
 
 const Layout = (props) => {
   return (
@@ -10,6 +10,6 @@ const Layout = (props) => {
       {props.children}
     </div>
   );
-}
+};
 
-export {Layout}
+export { Layout };

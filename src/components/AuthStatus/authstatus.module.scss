@@ -1,45 +1,46 @@
 @import "~/src/styles/theme";
 
 .user {
-    margin: 1rem 0.5rem;
-    font-weight: 700;
-    font-size: 18px;
+  margin: 1rem 0.5rem;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .signout {
-    border: none;
-    padding: 8px;
-    background-color: $color_lightgrey;
+  border: none;
+  padding: 8px;
+  background-color: $color_lightgrey;
 }
 
 .signout:hover,
 .signout:focus {
-    background-color: $color_grey;
+  background-color: $color_grey;
 }
 
 .flexWrapper {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .listItem {
-    text-align: center;
-    background-color: $color_lightgrey;
+  text-align: center;
+  background-color: $color_lightgrey;
 
-    &:hover, &:focus {
-        background-color: $color_grey;
-    }
+  &:hover,
+  &:focus {
+    background-color: $color_grey;
+  }
 
-    & a {
-        display: block;
-        padding: 8px;
-        white-space: nowrap;
-        text-decoration: none;
-    }
+  & a {
+    display: block;
+    padding: 8px;
+    white-space: nowrap;
+    text-decoration: none;
+  }
 }
 
 @media (max-width: 450px) {
-    .flexWrapper {
-        flex-direction: column;
-        align-items: center;
-    }
+  .flexWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }

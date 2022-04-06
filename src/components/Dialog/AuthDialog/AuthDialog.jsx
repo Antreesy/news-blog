@@ -1,45 +1,54 @@
 import { useDispatch, useSelector } from "react-redux";
-import c from "./authdialog.module.scss"
+import c from "./authdialog.module.scss";
 import React from "react";
 import { TextInput } from "../../TextInput/TextInput";
-import { authUser, changeLoginInput, changePassInput, closeAuth } from "../../../redux/actions/authActions";
-import { userData } from "../../../shared/const"
+import {
+  authUser,
+  changeLoginInput,
+  changePassInput,
+  closeAuth,
+} from "../../../redux/actions/authActions";
+import { userData } from "../../../shared/const";
 
 const AuthDialog = () => {
-  const store = useSelector((state) => {return {auth: state.auth}})
-  const dispatch = useDispatch()
- 
-  const onConfirm = (e) => {
-    e.preventDefault()
+  const store = useSelector((state) => {
+    return { auth: state.auth };
+  });
+  const dispatch = useDispatch();
 
-    const authData = userData.find(item => item.login === store.auth.loginInputValue)
+  const onConfirm = (e) => {
+    e.preventDefault();
+
+    const authData = userData.find(
+      (item) => item.login === store.auth.loginInputValue
+    );
     if (!authData) {
-        console.log('Нет такого пользователя')
-        return;
+      console.log("Нет такого пользователя");
+      return;
     }
 
     if (authData.password !== store.auth.passInputValue) {
-        console.log('Неверный пароль')
-        return;
+      console.log("Неверный пароль");
+      return;
     }
 
-    dispatch(authUser([authData.login, authData.role]))
+    dispatch(authUser([authData.login, authData.role]));
 
-    dispatch(closeAuth())
-  }
+    dispatch(closeAuth());
+  };
 
   const onAbort = (e) => {
-    e.preventDefault()
-    dispatch(closeAuth())
-  }
+    e.preventDefault();
+    dispatch(closeAuth());
+  };
 
   const onChangeLogin = (value) => {
-    dispatch(changeLoginInput(value))
-  }
+    dispatch(changeLoginInput(value));
+  };
 
   const onChangePassword = (value) => {
-    dispatch(changePassInput(value))
-  }
+    dispatch(changePassInput(value));
+  };
 
   return (
     <div className={c.wrapper}>
@@ -52,7 +61,7 @@ const AuthDialog = () => {
           placeholder="Введите логин"
           value={store.auth.loginInputValue}
           onChange={onChangeLogin}
-          validateRules={['required']}
+          validateRules={["required"]}
         />
 
         <TextInput
@@ -61,7 +70,7 @@ const AuthDialog = () => {
           placeholder="Введите пароль"
           value={store.auth.passInputValue}
           onChange={onChangePassword}
-          validateRules={['password']}
+          validateRules={["password"]}
         />
 
         <button
@@ -76,7 +85,7 @@ const AuthDialog = () => {
         />
       </form>
     </div>
-  )
-}
+  );
+};
 
-export {AuthDialog};
+export { AuthDialog };

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import Validation from '../../helpers/Validation';
+import React, { useState } from "react";
+import Validation from "../../helpers/Validation";
 
-import c from './textinput.module.scss';
+import c from "./textinput.module.scss";
 
 // interface IProps {
 //   label?: string;
@@ -14,19 +14,19 @@ import c from './textinput.module.scss';
 
 const TextInput = (props) => {
   const { label, value, onChange, type, placeholder, validateRules } = props;
-  const [inputType, setInputType] = useState(type)
-  const [error, setError] = useState('')
+  const [inputType, setInputType] = useState(type);
+  const [error, setError] = useState("");
 
   const handleType = () => {
-    setInputType(inputType === 'text' ? 'password' : 'text')
-  }
+    setInputType(inputType === "text" ? "password" : "text");
+  };
 
   const handleChange = (e) => {
     const value = e.target.value;
-    onChange(value)
-    const validation = new Validation(validateRules || '', value);
-    setError(validation.checkRules())
-  }
+    onChange(value);
+    const validation = new Validation(validateRules || "", value);
+    setError(validation.checkRules());
+  };
 
   return (
     <label className={c.label}>
@@ -40,15 +40,17 @@ const TextInput = (props) => {
           value={value}
           onChange={handleChange}
         />
-        {type === 'password' && 
-        <div
-          className={`${c.seePassword} ${inputType === 'password' ? c.hidden : c.visible}`}
-          onClick={handleType}
-        />}
+        {type === "password" && (
+          <div
+            className={`${c.seePassword} ${
+              inputType === "password" ? c.hidden : c.visible
+            }`}
+            onClick={handleType}
+          />
+        )}
       </div>
-
-  </label>
+    </label>
   );
 };
 
-export {TextInput};
+export { TextInput };
