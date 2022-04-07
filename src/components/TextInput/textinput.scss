@@ -1,0 +1,54 @@
+@import "~/src/styles/theme";
+
+.textinput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.textinput__text {
+  font-size: 14px;
+  font-weight: 600;
+  color: $color_txt;
+
+  &.textinput__text_error {
+    font-size: 12px;
+    font-weight: 400;
+    color: $color_red;
+  }
+}
+
+.textinput__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.textinput__input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid $color_txt;
+  font-family: inherit;
+  outline: none;
+}
+
+.textinput__button {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translate(-10%, -45%);
+  border: none;
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  &.textinput__button_hidden {
+    background-image: url("../../assets/eye-show.svg");
+  }
+  &.textinput__button_visible {
+    background-image: url("../../assets/eye-hide.svg");
+  }
+}

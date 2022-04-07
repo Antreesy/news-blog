@@ -1,0 +1,100 @@
+@import "~/src/styles/theme";
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(51, 51, 51, 0.6);
+
+  & .modal__dialog {
+    margin: 120px auto;
+    min-width: 200px;
+    max-width: fit-content;
+  }
+}
+
+.modal__scrollContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+
+.dialog {
+  padding: 16px;
+  border-radius: 16px;
+  background-color: #fff;
+}
+.dialog__container {
+  max-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dialog__caption {
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.dialog__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.dialog__textinput {
+  margin-bottom: 8px;
+
+  &.dialog__textinput_long {
+    min-width: 600px;
+  }
+}
+
+.dialog__text_error {
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: $color_red;
+}
+
+.dialog__button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &.dialog__button-wrapper_end {
+    justify-content: flex-end;
+
+    & :not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .dialog__textinput {
+    &.dialog__textinput_long {
+      min-width: 350px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .dialog__textinput {
+    &.dialog__textinput_long {
+      min-width: 100px;
+      width: 100%;
+    }
+  }
+}
