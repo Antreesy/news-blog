@@ -1,14 +1,13 @@
 import React from "react";
-import { Header } from "../Header/Header";
 
-import c from "./layout.module.scss";
+import { Header } from "../Header/Header";
 
 const Layout = (props) => {
   return (
-    <div className={c.container}>
+    <>
       <Header />
       {props.children}
-    </div>
+    </>
   );
 };
 

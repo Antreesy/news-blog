@@ -1,10 +1,10 @@
-import c from "./dialog.module.scss";
+import "./dialog.scss";
 
 const Dialog = ({ children }) => {
   return (
-    <div className={c.modal}>
-      <div className={c.scrollContainer}>
-        <div className={c.dialog}>{children}</div>
+    <div className="modal">
+      <div className="modal__scrollContainer">
+        <div className="dialog modal__dialog">{children}</div>
       </div>
     </div>
   );

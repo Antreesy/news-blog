@@ -1,21 +1,10 @@
 import React, { useState } from "react";
-import Validation from "../../helpers/Validation";
 
-import c from "./textinput.module.scss";
-
-// interface IProps {
-//   label?: string;
-//   onChange: (value: string)=> void;
-//   value: string;
-//   type: "text" | "password";
-//   placeholder?: string;
-//   validateRules?: string | string[];
-// }
+import "./textinput.scss";
 
 const TextInput = (props) => {
-  const { label, value, onChange, type, placeholder, validateRules } = props;
+  const { className, label, value, onChange, type, placeholder } = props;
   const [inputType, setInputType] = useState(type);
-  const [error, setError] = useState("");
 
   const handleType = () => {
     setInputType(inputType === "text" ? "password" : "text");
@@ -24,31 +13,43 @@ const TextInput = (props) => {
   const handleChange = (e) => {
     const value = e.target.value;
     onChange(value);
-    const validation = new Validation(validateRules || "", value);
-    setError(validation.checkRules());
   };
 
   return (
-    <label className={c.label}>
-      <span className={c.labeltext}>{label}</span>
-      {error && <span className={c.errortext}>{error}</span>}
-      <div className={c.wrapper}>
-        <input
-          type={inputType}
-          placeholder={placeholder}
-          autoComplete="off"
-          value={value}
-          onChange={handleChange}
-        />
-        {type === "password" && (
-          <div
-            className={`${c.seePassword} ${
-              inputType === "password" ? c.hidden : c.visible
-            }`}
-            onClick={handleType}
+    <label className={`${className} textinput`}>
+      <span className="textinput__text">{label}</span>
+      {type !== "textarea" && (
+        <div className="textinput__wrapper">
+          <input
+            className="textinput__input"
+            type={inputType}
+            placeholder={placeholder}
+            autoComplete="off"
+            value={value}
+            onChange={handleChange}
           />
-        )}
-      </div>
+          {type === "password" && (
+            <div
+              className={`textinput__button ${
+                inputType === "password"
+                  ? "textinput__button_hidden"
+                  : "textinput__button_visible"
+              }`}
+              onClick={handleType}
+            />
+          )}
+        </div>
+      )}
+      {type === "textarea" && (
+        <div className="textinput__wrapper">
+          <textarea
+            className="textinput__input"
+            placeholder={placeholder}
+            value={value}
+            onChange={handleChange}
+          />
+        </div>
+      )}
     </label>
   );
 };

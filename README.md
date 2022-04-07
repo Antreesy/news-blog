@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Проект собран с Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Cтек технологий
 
-## Available Scripts
+### `React`
 
-In the project directory, you can run:
+### `Redux`
 
-### `npm start`
+### `что-то ещё`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Запуск проекта:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`npm start` - запуск приложения на [http://localhost:3000](http://localhost:3000).
 
-### `npm test`
+## Пользователи для проверки:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Администратор: `admin` / `admin123`
 
-### `npm run build`
+### Пользователь: `user` / `user123`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Гость: не требует авторизации
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Тестовое задание
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Создать SPA на React + Redux. Использовать JS/JSX
+Вверху должна быть строка меню: Логотип из задания(при клике на него происходит переход на главную), Новости, Вход/Выход
 
-### `npm run eject`
+`Главная`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+На ней должен быть текст: "Привет, Гость", если пользователь не авторизован и текст "Привет, {LOGIN}", если пользователь авторизован.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`Вход`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Производится на попапе, вводится логин и пароль. При неверном вводе должна быть индикация ошибки. После успешного входа попап закрывается.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`Новости`
 
-## Learn More
+Отображается список новостей и поиск по новостям. Фильтрация новостей должна производиться сразу при вводе текста поиска. У каждой новости есть: название, текст и дата создания.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Должно быть 2 пользователя:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- пользователь
+- админ
 
-### Code Splitting
+У пользователя должна быть возможность добавить новость. У админа должна быть возможность одобрить новость или удалить. По умолчанию созданная пользователем новость не является одобренной.
+Гость должен видеть только одобренные админом новости. Гость не может создавать или одобрять новости.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Для упрощения работа выполняется без серверной части, начальная инициализация новостей задается в константе, правильные логин и пароль пользователей так же задаются константой.
+Вся верстка должна быть выполнена с использованием БЭМ и SASS/SCSS. В списке новостей нужно сделать, чтобы для десктопной версии выводилось по 2 новости в строке, а в мобильной по одной.
+Результат работы предоставлен в виде ссылки на git репозиторий. Предоставлены логин и пароль 2 тестовых пользователей.

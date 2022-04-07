@@ -1,9 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { cleanUser, openAuth } from "../../redux/actions/authActions";
+import { cleanUser } from "../../redux/actions/authActions";
+import { openAuth } from "../../redux/actions/modalActions";
 
-import c from "./authstatus.module.scss";
+import "./authstatus.scss";
 
 const AuthStatus = () => {
   const dispatch = useDispatch();
@@ -21,15 +22,17 @@ const AuthStatus = () => {
   };
 
   return (
-    <div className={c.flexWrapper}>
-      <p className={c.user}>
-        {store.auth.login
-          ? `Пользователь: ${store.auth.login}`
-          : "Вход не выполнен"}
-      </p>
-      <button className={c.link} onClick={handleClick}>
-        {store.auth.login ? `Выйти` : "Войти"}
-      </button>
+    <div className="auth">
+      <div className="auth__wrapper">
+        <p className="auth__userinfo">
+          {store.auth.login
+            ? `Пользователь: ${store.auth.login}`
+            : "Вход не выполнен"}
+        </p>
+        <button className="button button_primary" onClick={handleClick}>
+          {store.auth.login ? `Выйти` : "Войти"}
+        </button>
+      </div>
     </div>
   );
 };

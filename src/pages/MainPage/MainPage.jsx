@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import c from "./mainpage.module.scss";
+import "./mainpage.scss";
 
 const MainPage = () => {
   const store = useSelector((state) => {
@@ -9,11 +9,11 @@ const MainPage = () => {
   });
 
   return (
-    <div className={c.main_page}>
-      <h3 className={c.caption}>Главная страница</h3>
-      <h3 className={c.welcome}>
+    <div className="container main__container">
+      <h3 className="heading main__heading">Главная страница</h3>
+      <h4 className="heading main__caption">
         Привет, {store.auth.login ? store.auth.login : "Гость"}
-      </h3>
+      </h4>
     </div>
   );
 };

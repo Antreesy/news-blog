@@ -1,8 +1,6 @@
 import {
   AUTH_USER,
   CLEAN_USER,
-  OPEN_AUTH,
-  CLOSE_AUTH,
   CHANGE_LOGIN_INPUT,
   CHANGE_PASS_INPUT,
 } from "../consts/auth";
@@ -20,18 +18,6 @@ const cleanUser = () => {
   };
 };
 
-const openAuth = () => {
-  return {
-    type: OPEN_AUTH,
-  };
-};
-
-const closeAuth = () => {
-  return {
-    type: CLOSE_AUTH,
-  };
-};
-
 const changeLoginInput = (value) => {
   return {
     type: CHANGE_LOGIN_INPUT,
@@ -46,11 +32,4 @@ const changePassInput = (value) => {
   };
 };
 
-export {
-  authUser,
-  cleanUser,
-  openAuth,
-  closeAuth,
-  changeLoginInput,
-  changePassInput,
-};
+export { authUser, cleanUser, changeLoginInput, changePassInput };
