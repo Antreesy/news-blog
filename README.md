@@ -1,4 +1,4 @@
-#Code Challenge - News Page (with editing)
+# Code Challenge - News Page (with editing)
 
 Create a SPA with React + Redux. Use JS/JSX
 At the top there should be a menu bar: Logo from the task (when you click on it, you go to the main one), News, Login / Logout
