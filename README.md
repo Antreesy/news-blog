@@ -1,50 +1,41 @@
-# Проект собран с Create React App
+#Code Challenge - News Page (with editing)
 
-## Cтек технологий
+Create a SPA with React + Redux. Use JS/JSX
+At the top there should be a menu bar: Logo from the task (when you click on it, you go to the main one), News, Login / Logout
+
+`Main`
+
+It should contain the text: "Hello Guest" if the user is not logged in and the text "Hi {LOGIN}" if the user is logged in.
+
+`Login`
+
+Produced on a pop-up, login and password are entered. If the input is incorrect, there should be an error indication. After a successful login, the popup closes.
+
+`News`
+
+The news list and news search is displayed. News filtering should be performed immediately when entering the search text. Each news has: title, text and creation date.
+
+The user should be able to add news. The admin should be able to approve the news or delete it. By default, user-created news is not approved.
+The guest should only see news approved by the admin. Guest cannot create or approve news.
+
+To simplify the work, the work is performed without the server part, the initial initialization of the news is set in a constant, the correct login and password of users are also set in a constant.
+All layout must be done using BEM and SASS/SCSS. In the list of news, you need to make sure that for the desktop version, 2 news per line are displayed, and for the mobile version, one at a time.
+
+## Technology stack
 
 ### `React + React Router`
-
 ### `Redux`
+### `BEM + SCSS`
 
-### `БЭМ + SCSS`
 
-## Запуск проекта:
+## Launch:
 
-`npm start` - запуск приложения на [http://localhost:3000](http://localhost:3000).
+`npm start` - launch client on [http://localhost:3000](http://localhost:3000).
 
-## Пользователи для проверки:
+## Users to check:
 
-### Администратор: `admin` / `admin123`
+### Administrator: `admin` / `admin123`
 
-### Пользователь: `user` / `user123`
+### User: `user` / `user123`
 
-### Гость: не требует авторизации
-
-# Тестовое задание
-
-Создать SPA на React + Redux. Использовать JS/JSX
-Вверху должна быть строка меню: Логотип из задания(при клике на него происходит переход на главную), Новости, Вход/Выход
-
-`Главная`
-
-На ней должен быть текст: "Привет, Гость", если пользователь не авторизован и текст "Привет, {LOGIN}", если пользователь авторизован.
-
-`Вход`
-
-Производится на попапе, вводится логин и пароль. При неверном вводе должна быть индикация ошибки. После успешного входа попап закрывается.
-
-`Новости`
-
-Отображается список новостей и поиск по новостям. Фильтрация новостей должна производиться сразу при вводе текста поиска. У каждой новости есть: название, текст и дата создания.
-
-Должно быть 2 пользователя:
-
-- пользователь
-- админ
-
-У пользователя должна быть возможность добавить новость. У админа должна быть возможность одобрить новость или удалить. По умолчанию созданная пользователем новость не является одобренной.
-Гость должен видеть только одобренные админом новости. Гость не может создавать или одобрять новости.
-
-Для упрощения работа выполняется без серверной части, начальная инициализация новостей задается в константе, правильные логин и пароль пользователей так же задаются константой.
-Вся верстка должна быть выполнена с использованием БЭМ и SASS/SCSS. В списке новостей нужно сделать, чтобы для десктопной версии выводилось по 2 новости в строке, а в мобильной по одной.
-Результат работы предоставлен в виде ссылки на git репозиторий. Предоставлены логин и пароль 2 тестовых пользователей.
+### Guest: does not require authorization
